@@ -1,26 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-#define MAX_NAME_LEN 50
-#define MAX_MAJOR_LEN 50
-
-// 学生信息结构体
-typedef struct {
-    char xh[20];        // 学号
-    char xm[MAX_NAME_LEN]; // 姓名
-    char xb[5];         // 性别
-    int nl;            // 年龄
-    char zy[MAX_MAJOR_LEN]; // 专业
-} Student;
-
-// 链表节点结构体
-typedef struct Node {
-    Student data;
-    struct Node *next;
-} Node;
-
-extern Node *head; // 声明外部变量 head，假设在其他地方定义
 
 // 显示指定学生信息
 void display_student(Node *student) {
