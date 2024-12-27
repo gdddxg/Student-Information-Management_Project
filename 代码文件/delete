@@ -1,0 +1,20 @@
+// 删除指定姓名学生信息的函数
+void deleteStudent(Student **head, char *name) {
+    Student *prev = NULL;
+    Student *curr = *head;
+    while (curr!= NULL) {
+        if (strcmp(curr->xm, name) == 0) {
+            if (prev == NULL) {
+                *head = curr->next;
+            } else {
+                prev->next = curr->next;
+            }
+            free(curr);
+            printf("指定姓名的学生信息删除成功!\n");
+            return;
+        }
+        prev = curr;
+        curr = curr->next;
+    }
+    printf("未找到指定姓名的学生信息!\n");
+}
