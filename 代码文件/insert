@@ -1,0 +1,21 @@
+// 增加学生信息函数
+void addStudent(Student **head) {
+    Student *newStudent = (Student *) malloc(sizeof(Student));
+    if (newStudent == NULL) {
+        printf("内存分配失败!\n");
+        return;
+    }
+    printf("请输入学号: ");
+    scanf("%d", &newStudent->xh);
+    printf("请输入姓名: ");
+    scanf("%s", newStudent->xm);
+    printf("请输入性别: ");
+    scanf("%s", newStudent->xb);
+    printf("请输入年龄: ");
+    scanf("%d", &newStudent->nl);
+    printf("请输入专业: ");
+    scanf("%s", newStudent->zy);
+    newStudent->next = *head;
+    *head = newStudent;
+    printf("学生信息添加成功!\n");
+}
