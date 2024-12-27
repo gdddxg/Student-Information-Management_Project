@@ -5,16 +5,8 @@ void addStudent(Student **head) {
         printf("内存分配失败!\n");
         return;
     }
-    printf("请输入学号: ");
-    scanf("%d", &newStudent->xh);
-    printf("请输入姓名: ");
-    scanf("%s", newStudent->xm);
-    printf("请输入性别: ");
-    scanf("%s", newStudent->xb);
-    printf("请输入年龄: ");
-    scanf("%d", &newStudent->nl);
-    printf("请输入专业: ");
-    scanf("%s", newStudent->zy);
+    printf("请输入学生信息（学号，姓名，性别，年龄，专业）: ");
+    scanf("%d %s %s %d %s", &newStudent->xh, newStudent->xm， newStudent->xb,& newStudent->nl, newStudent->zy);
     newStudent->next = *head;
     *head = newStudent;
     printf("学生信息添加成功!\n");
